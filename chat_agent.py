@@ -13,7 +13,7 @@ from quote_engine import calculate_quote, summary_text
 
 _type_list = "\n".join(f"- {name}: {info['desc']}" for name, info in P.CONTENT_TYPES.items())
 
-BASE_PROMPT = f"""당신은 {P.COMPANY_NAME}의 이러닝 콘텐츠 제작 견적 상담원입니다.
+BASE_PROMPT = f"""당신은 이러닝 콘텐츠 제작 견적 상담원입니다.
 고객(발주처 담당자)과 친절하고 간결한 한국어로 대화합니다.
 
 [견적 계산에 꼭 필요한 조건]

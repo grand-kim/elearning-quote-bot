@@ -36,8 +36,7 @@ def make_quote_xlsx(quote, info=None):
     ws["A1"].alignment = Alignment(horizontal="center")
 
     meta = [("견적일", today.isoformat()),
-            ("유효기간", (today + timedelta(days=P.QUOTE_VALID_DAYS)).isoformat() + " 까지"),
-            ("발신", P.COMPANY_NAME)]
+            ("유효기간", (today + timedelta(days=P.QUOTE_VALID_DAYS)).isoformat() + " 까지")]
     meta += [(label, info.get(key)) for key, label in INFO_LABELS if info.get(key)]
     row = 3
     for k, v in meta:
@@ -112,7 +111,6 @@ def make_quote_xlsx(quote, info=None):
     row += 1
     ws.cell(row, 1, f"※ 단가 기준: {quote['단가 기준']}")
     ws.cell(row + 1, 1, "※ 본 견적은 상담 내용 기반 예상 금액이며, 최종 금액은 담당자 협의 후 확정됩니다.")
-    ws.cell(row + 2, 1, f"※ 문의: {P.COMPANY_NAME} {P.COMPANY_CONTACT}")
 
     buf = BytesIO()
     wb.save(buf)

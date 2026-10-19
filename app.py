@@ -38,7 +38,7 @@ def get_secret(name, default=None):
 llm = make_llm(get_secret)       # 키가 없으면 None → 단계별 견적만 사용
 SERPAPI_KEY = get_secret("SERPAPI_KEY")
 
-GREETING = (f"안녕하세요, {P.COMPANY_NAME} 이러닝 콘텐츠 제작 견적 상담입니다. 😊\n\n"
+GREETING = ("안녕하세요, 이러닝 콘텐츠 제작 견적 상담입니다. 😊\n\n"
             "**어떤 견적이 필요하신가요?**\n\n"
             "- 구체적으로 말씀해 주시면 바로 대화로 상담해 드려요. "
             "(예: *애니메이션형 10차시, 차시당 25분, 성우 포함*)\n"
